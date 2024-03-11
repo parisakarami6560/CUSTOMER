@@ -1,0 +1,76 @@
+﻿@page
+@model myblogef.Pages.EditModel
+@{
+}
+
+<style>
+   
+
+    body {
+        background-image: url('/images/bg-01.jpg');
+        background-size: cover;
+    }
+</style>
+@if(Model.customer is not null)
+{
+    <div class="container  ">
+        <div class=" row  justify-content-center  ">
+        
+                <form method="post">
+
+                    <input asp-for="customer.Id" class="m-2" hidden />
+                    <div class="col-6">
+                        <label class="form-label"> Firstname </label>
+                        <input asp-for="customer.FirstName" class="form-control  m-2" />
+
+                    </div>
+
+                    <div class="col-6">
+                        <label> lastname </label>
+                        <input asp-for="customer.LastName" class="form-control  m-2">
+                    </div>
+
+                    <div class="col-6">
+                        <label>Email </label>
+                        <input asp-for="customer.Email" class="form-control  m-2">
+                    </div>
+                    <div class="col-6">
+                        <label> Ege </label>
+                        <input asp-for="customer.Age" class="form-control  m-2">
+                    </div>
+                    <div class="col-6">
+                        <label> Gender</label>
+                        <input asp-for="customer.Gender" class="form-control  m-2">
+
+                    </div>
+                    <div class="col-6">
+                        <label> phonNumber </label>
+                        <input asp-for="customer.PhoneNumber" class="form-control m-2">
+
+                    </div>
+                    <div class="col-6">
+                        <label> DateofBrith </label>
+                        <input asp-for="customer.DateofBrith" class="form-control m-2">
+                    </div>
+                    <div class="col-6">
+                        <label> BankAccount </label>
+                        <input asp-for="customer.BankAccountNumber" class="form-control  m-2">
+                    </div>
+                
+                        
+                        <button class="btn btn-success btn-lg ">Edit</button>
+                        
+                
+                    
+      
+
+                </form>
+
+
+            
+
+        </div>
+    </div>
+
+  
+}

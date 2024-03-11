@@ -1,0 +1,46 @@
+﻿@page
+@model myblogef.Pages.DetaleModel
+@{
+}
+<style>
+  
+
+    body {
+        background-image: url('/images/bg-01.jpg');
+        background-size: cover;
+    }
+</style>
+
+<h1>Detail</h1>
+@if(Model.customer is not null )
+{
+    <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">your informaition</h5>
+                    <p>  FirstName:@Model.customer.FirstName</p>
+                    <p>  FirstName:@Model.customer.LastName</p>
+                    <p>  FirstName:@Model.customer.Email</p>
+                    <p>  FirstName:@Model.customer.Age</p>
+                    <p>  FirstName:@Model.customer.Gender</p>
+                    <p>  FirstName:@Model.customer.PhoneNumber</p>
+                    <p>  FirstName:@Model.customer.DateofBrith</p>
+                    <p>  FirstName:@Model.customer.BankAccountNumber</p>
+                    <a asp-page="Index" class="btn btn-primary">Go Home</a>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+
+
+
+    
+    
+}
+else
+{
+    <span>Not Fund</span>
+}

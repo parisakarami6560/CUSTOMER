@@ -1,0 +1,77 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    thead th {
+        text-align: right;
+    }
+
+    thead {
+        box-shadow: 0 0 2px 0 gray;
+        background: #0000000d;
+    }
+
+    body {
+        background-image: url('/images/bg-01.jpg');
+        background-size: cover;
+    }
+</style>
+
+<table class="table">
+  <tr>
+
+       <th>
+            <a asp-page="Creat" class="btn btn-primary">Creat</a>
+       </th> 
+  </tr> 
+    
+</table>
+<table class="table">
+    <thead >
+
+        <tr>
+            <th>id</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th> Email</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th> PhonNumber  </th>
+            <th>Dateofbrith</th>
+            <th>BankAcunt</th>
+            <th></th>
+            <th></th>
+            <th></th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach(var item in Model.customer)
+        {
+            <tr>
+
+                <td>@item.Id</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td>@item.Age</td>
+                <td>@item.Gender</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.DateofBrith</td>
+                <td>@item.BankAccountNumber</td>
+               <td><a asp-page="Edit"  asp-route-id="@item.Id"  class="btn btn-primary" >Edit</a></td>
+                <td><a asp-page="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a></td>
+                <td><a asp-page="Detail" asp-route-id="@item.Id" class="btn btn-info">Detai</a></td>
+
+            </tr>
+
+        }
+    </tbody>
+    
+
+</table>

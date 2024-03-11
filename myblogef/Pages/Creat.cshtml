@@ -1,0 +1,38 @@
+﻿@page
+@model myblogef.Pages.CreatModel;
+@{
+}
+
+<style>
+
+
+    body {
+        background-image: url('/images/bg-01.jpg');
+        background-size: cover;
+    }
+</style>
+
+@if (Model.customers is not null)
+{
+
+    <form  method="post">
+        
+       
+        <input asp-for="customers.FirstName"  class="form-control m-2"  placeholder="First name"/>
+        <input  asp-for="customers.LastName"    class="form-control m-2"  placeholder="Lastname">
+        <input asp-for="customers.Email" class="form-control m-2" placeholder="Email">
+        <input asp-for="customers.Age" class="form-control m-2" placeholder="age">
+        <input asp-for="customers.Gender" class="form-control m-2" placeholder="Gender">
+        <input asp-for="customers.PhoneNumber" class="form-control m-2"  placeholder="Phonnumber">
+        <input asp-for="customers.DateofBrith" class="form-control m-2"  placeholder="Dat">
+        <input asp-for="customers.BankAccountNumber" class="form-control m-2"  placeholder="BankAccount">
+        <br />
+        <button class="btn btn-success btn-lg">Submit</button>
+        <br />
+
+    </form>
+}
+else
+{
+    <span>Not Found</span>
+}
